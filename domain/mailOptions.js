@@ -4,6 +4,7 @@ function MailOptions(mailOptions) {
 	var self = {};
 
 	self.options = (function() {
+
 		if(mailOptions.from == null) {
 			throw new Error('Paramater from not found.');
 		}

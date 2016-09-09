@@ -1,0 +1,12 @@
+{
+	"options" : {
+		"smtp" : "smtps://enviadordigitho%40gmail.com:sa123456@smtp.gmail.com",
+		"mailOptions" : {
+		    "from": "enviadordigitho@gmail.com", 
+		    "to": "diegopaniago1@gmail.com, enviadordigitho@gmail.com", 
+		    "subject": "Hello ✔", 
+		    "text": "Hello world 🐴",  
+		    "html": "<b>Hello world 🐴</b>" 
+		}
+	}
+}
