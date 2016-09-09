@@ -4,9 +4,13 @@
 		"mailOptions" : {
 		    "from": "enviadordigitho@gmail.com", 
 		    "to": "diegopaniago1@gmail.com, enviadordigitho@gmail.com", 
-		    "subject": "Hello ✔", 
-		    "text": "Hello world 🐴",  
-		    "html": "<b>Hello world 🐴</b>" 
+		    "subject": "Aooooo", 
+		    "html": "<span style='color: red;'>Teste maldito</span>",
+		    "attachments": [
+		        {
+		            "filename": "anexoDeTeste.txt",
+		            "content": "hello world!"
+		        }]
 		}
 	}
 }
