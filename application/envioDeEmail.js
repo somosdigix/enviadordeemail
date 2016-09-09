@@ -11,11 +11,11 @@ function EnvioDeEmail(smtp, options){
 	self.enviar = function(callback){
 		transporter.sendMail(mailOptions.options, function(error, info){
 			if(error){
-				callback('Failure');
-				return console.log(error);
+				callback(error.message);
+				return console.log(error.message);
 			}
-			callback('Sent');
-			return console.log('Message sent: ' + info);
+			callback('Message sent: ' + info.response);
+			return console.log('Message sent: ' + info.response);
 		});
 	};
  
