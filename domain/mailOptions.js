@@ -17,7 +17,7 @@ function MailOptions(mailOptions) {
 			throw new Error('Paramater subject not found.');
 		}
 
-		if(mailOptions.text == null && mailOptions.html) {
+		if(mailOptions.text == null && mailOptions.html == null) {
 			throw new Error('Paramater text or html not found.');
 		}
 
