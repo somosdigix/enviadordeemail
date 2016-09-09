@@ -3,6 +3,7 @@ var router = express.Router();
 var nodemailer = require('nodemailer');
 
 router.post('/enviar', function(req, res, next) {
+	
 	console.log('oi');
 	// create reusable transporter object using the default SMTP transport 
 	var transporter = nodemailer.createTransport('smtps://user%40gmail.com:pass@smtp.gmail.com');
