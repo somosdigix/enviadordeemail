@@ -1,9 +1,9 @@
 function MailOptions(mailOptions) {
-	"use strict";
+	'use strict';
 
 	var self = {};
 
-	self.options = (function() {
+	self.options = (function () {
 
 		if(mailOptions.from == null) {
 			throw new Error('Paramater from not found.');
@@ -23,6 +23,8 @@ function MailOptions(mailOptions) {
 
 		return mailOptions;
 	})();
+
+	return self;
 }
 
 module.exports = MailOptions;

@@ -6,15 +6,16 @@ function EnvioDeEmail(smtp, options){
 	
 	var transporter = nodemailer.createTransport(smtp);
  
-	var mailProperties = new MailOptions(options);
+	var mailOptions = new MailOptions(options);
 
-	self.enviar = function(){
-		console.log(smtp);
-		transporter.sendMail(mailProperties, function(error, info){
+	self.enviar = function(callback){
+		transporter.sendMail(mailOptions.options, function(error, info){
 			if(error){
+				callback('Failure');
 				return console.log(error);
 			}
-			console.log('Message sent: ' + info.response);
+			callback('Sent');
+			return console.log('Message sent: ' + info);
 		});
 	};
  
