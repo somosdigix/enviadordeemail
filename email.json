@@ -3,7 +3,7 @@
 		"smtp" : "smtps://enviadordigitho%40gmail.com:sa123456@smtp.gmail.com",
 		"mailOptions" : {
 		    "from": "enviadordigitho@gmail.com", 
-		    "to": "diegopaniago1@gmail.com, enviadordigitho@gmail.com", 
+		    "to": "diegopaniago1@gmail.com", 
 		    "subject": "Aooooo", 
 		    "html": "<span style='color: red;'>Teste maldito</span>",
 		    "attachments": [
