@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-var nodemailer = require('nodemailer');
 var EnvioDeEmail = require('../application/envioDeEmail');
 
 router.post('/enviar', function(req, res, next) {
