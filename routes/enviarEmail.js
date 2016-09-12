@@ -4,7 +4,6 @@ var nodemailer = require('nodemailer');
 var EnvioDeEmail = require('../application/envioDeEmail');
 
 router.post('/enviar', function(req, res, next) {
-	console.log(req.body);
 	var smtp = req.body.options.smtp;
 	var mailOptions = req.body.options.mailOptions;
 	var email = new EnvioDeEmail(smtp,mailOptions);
@@ -13,7 +12,7 @@ router.post('/enviar', function(req, res, next) {
 	});
 });
 
-router.get('/enviar', function(req, res, next) {
+router.get('/', function(req, res, next) {
 	res.render('index', {});
 });
 

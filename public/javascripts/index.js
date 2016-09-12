@@ -34,13 +34,11 @@ function submitDoForm(evento){
 	data.options.mailOptions.subject = json.subject;
 	data.options.mailOptions.html = json.html;
 	
-	console.log(JSON.stringify(data));
-	
 	$.post('/enviar', data)
-	.done(function(){
-		$('#mensagemDeErro').text('');
-	})
 	.fail(function(){
 		$('#mensagemDeErro').text('Erro no POST');
+	})
+	.always(function( data, textStatus, error){
+		$('#mensagemDeErro').text(data);
 	});
 }
