@@ -1,10 +1,29 @@
+(function ($) {
+    $.fn.serializeFormJSON = function () {
+
+        var o = {};
+        var a = this.serializeArray();
+        $.each(a, function () {
+            if (o[this.name]) {
+                if (!o[this.name].push) {
+                    o[this.name] = [o[this.name]];
+                }
+                o[this.name].push(this.value || '');
+            } else {
+                o[this.name] = this.value || '';
+            }
+        });
+        return o;
+    };
+})(jQuery);
+
 $(document).ready(function(){
-	$('form').on('submit', submitDoForm);
+	$('.btn').on('click', submitDoForm);
 });
 
 function submitDoForm(evento){
- 	evento.preventDefault();
-	var elemento = evento.currentTarget;
-	var json = JSON.parse(JSON.stringify($(elemento).serializeArray()));
-	$.post('/enviar', {'oi' : 'oi'}, function(){},'json').fail(function(error){console.log(error)});
+	evento.preventDefault();
+	var data = JSON.stringify($('#formulario').serializeFormJSON());
+    console.log(data);
+    $.post('/enviar', data)
 }
