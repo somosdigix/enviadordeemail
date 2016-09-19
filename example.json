@@ -1,0 +1,16 @@
+{
+	"options" : {
+		"smtp" : "smtps://example@test.com:password@smtp.test.com",
+		"mailOptions" : {
+		    "from": "you@test.com", 
+		    "to": "someone@test.com", 
+		    "subject": "Test", 
+		    "html": "<span style='color: red;'>Test</span>",
+		    "attachments": [
+		        {
+		            "filename": "attachment.txt",
+		            "content": "hello world!"
+		        }]
+		}
+	}
+}
