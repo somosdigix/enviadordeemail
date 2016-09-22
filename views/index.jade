@@ -4,52 +4,34 @@ block content
 	script(type="text/javascript" src="/javascripts/jquery.min.js")
 	script(type="text/javascript" src="/javascripts/index.js")
 
-	form(id="formulario" style="padding: 10px;" action="/enviar")
-		h1(style="text-align: center;") Envie um email de teste
-		h4(id="mensagemDeErro" style="text-align: center;")
-		div(class="form-group")
-			label(for="smtp") SMTP:
-			input(id="smtp" type="text" class="form-control" name="smtp" placeholder="smtps://account@gmail.com:password@smtp.gmail.com")
-		
-		div(class="form-group")
-			label(for="de") De:
-			input(id="de" type="email" class="form-control" name="from" placeholder="account@example.com")
-		
-		div(class="form-group")
-			label(for="para") Para:
-			input(id="para" type="email" class="form-control" name="to" placeholder="account@example.com, anotherAccount@example.com")
-		
-		div(class="form-group")
-			label(for="assunto") Assunto:
-			input(id="assunto" type="text" class="form-control" name="subject" placeholder="Assunto do email")
-		
-		div(class="form-group")		
-			label(for="conteudo") Conteudo:
-			textarea(id="conteudo" class="form-control" rows="3" name="html" placeholder="conteudo em texto ou html com css inline")
-
-		div(class="form-group" style="text-align: center;")
-			button(type="submit" class="btn btn-info" style="width: 30%;") Enviar
-
-
 	form(id="formularioJson" style="padding: 10px;" action="/enviar")
+		h1(style="text-align: center;") Envie um email de teste
 		h1(style="text-align: center;") JSON
 		h4(id="mensagemDeErroJson" style="text-align: center;")
 
 		div(class="form-group")		
 			label(for="conteudo") Conteudo:
-			textarea(id="conteudoJson" class="form-control" rows="16" name="html" autocomplete="off")
+			textarea(id="conteudoJson" class="form-control" rows="24" name="html" autocomplete="off")
 				|{
 				|	"options" : {
-				|		"smtp" : "smtps://account@gmail.com:password@smtp.gmail.com",
+				|		"smtp" : {
+				|			"host":"email-ssl.com.br",	
+				|			"port":"465",
+				|			"secure": true,
+				|			"auth": {
+				|				"user":"example@example.com.br", 
+				|				"pass": "PASSWORD"
+				|			}
+				|		},
 				|		"mailOptions" : {
-				|		    "from": "teste@example.com.br", 
-				|		    "to": "teste@example.com", 
-				|		    "subject": "Teste", 
-				|		    "html": "<span style='color: red;'>Teste</span>",
+				|		    "from": "you@test.com", 
+				|		    "to": "someone@test.com", 
+				|		    "subject": "Test", 
+				|		    "html": "<span style='color: red;'>Test</span>",
 				|		    "attachments": [
 				|		        {
-				|		            "filename": "anexoDeTeste.txt",
-				|		            "content": "Ola mundo!"
+				|		            "filename": "attachment.txt",
+				|		            "content": "hello world!"
 				|		        }]
 				|		}
 				|	}
