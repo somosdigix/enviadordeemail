@@ -5,11 +5,11 @@ Um serviço de envio de email escrito em Nodejs onde você passa o servidor smtp
 O parâmetro smtp pode ser enviado de duas formas:
 
 //Melhor para GMAIL porem é necessario desabilitar as configurações de proteção para apps terceiros na sua conta Google
-- "smtp" : "smtps://example@test.com:password@smtp.test.com"
+- <pre><code>"smtp" : "smtps://example@test.com:password@smtp.test.com"</pre></code>
 
 ou
 
-- "smtp" : {
+- <pre><code>"smtp" : {
 			"host":"email-ssl.com.br",	
 			"port":"465",
 			"secure": true, //Habilita SSL e TLS
@@ -17,10 +17,10 @@ ou
 				"user":"example@example.com.br", 
 				"pass": "PASSWORD"
 			}
-		}
+		}</pre></code>
 
-# JSON COmpleto
-{
+# JSON Completo
+<pre><code>{
 	"options" : {
 		"smtp" : {
 			"host":"email-ssl.com.br",	
@@ -43,4 +43,4 @@ ou
 		        }]
 		}
 	}
-}
+}</pre></code>
