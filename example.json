@@ -1,6 +1,14 @@
 {
 	"options" : {
-		"smtp" : "smtps://example@test.com:password@smtp.test.com",
+		"smtp" : {
+			"host":"email-ssl.com.br",	
+			"port":"465",
+			"secure": true,
+			"auth": {
+				"user":"example@example.com.br", 
+				"pass": "PASSWORD"
+			}
+		},
 		"mailOptions" : {
 		    "from": "you@test.com", 
 		    "to": "someone@test.com", 
